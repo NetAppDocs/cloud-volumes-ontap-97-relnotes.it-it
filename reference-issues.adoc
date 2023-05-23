@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: reference-issues.html 
+keywords: issues, bugs, known issues 
+summary: 'I problemi noti identificano i problemi che potrebbero impedire l"utilizzo corretto di questa versione del prodotto.' 
+---
+= Problemi noti
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+I problemi noti identificano i problemi che potrebbero impedire l'utilizzo corretto di questa versione del prodotto.
+
+I problemi noti relativi al software ONTAP sono disponibili in https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["Note di rilascio di ONTAP"^].
+
+
+
+== L'interruzione del nodo può causare un guasto sulle coppie ha con più SVM
+
+Se si prevede di arrestare o riavviare un nodo Cloud Volumes ONTAP in una coppia ha con più macchine virtuali di storage (SVM), si consiglia di pre-migrare tutte le interfacce logiche (LIFF) nel nodo partner prima di spegnere il nodo.
+
+Nell'esempio seguente vengono migrate tutte le LIF dei dati dal nodo (locale) corrente:
+
+`node1::> network interface migrate-all -node local`
+
+Questa azione consente di velocizzare la transizione di rete al nodo partner ed evitare occasionali problemi noti legati all'arresto del nodo.
+
+Se il nodo non può essere arrestato perché la migrazione delle LIF richiede troppo tempo, un nuovo tentativo del comando reboot o halt dovrebbe interromperlo.

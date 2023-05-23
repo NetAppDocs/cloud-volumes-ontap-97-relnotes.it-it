@@ -1,0 +1,259 @@
+---
+sidebar: sidebar 
+permalink: reference-new.html 
+keywords: 'what"s new, new, features, release notes, enhancements' 
+summary: Cloud Volumes ONTAP 9.7 include diverse nuove funzionalità e miglioramenti. 
+---
+= Novità di Cloud Volumes ONTAP 9.7
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 9.7 include diverse nuove funzionalità e miglioramenti.
+
+Ulteriori funzionalità e miglioramenti sono stati introdotti anche nelle ultime versioni di Cloud Manager. Vedere https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Note di rilascio di Cloud Manager"^] per ulteriori informazioni.
+
+
+
+== 9.7 P6 (15 agosto 2020)
+
+La versione della patch 9.7 P6 per Cloud Volumes ONTAP è ora disponibile tramite Cloud Manager 3.8 e versioni successive. Cloud Manager ti chiederà di aggiornare i sistemi esistenti a questa release di patch. https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.7P6["Visualizza l'elenco dei bug corretti nella patch P6"^] (Accesso al NetApp Support Site richiesto).
+
+
+
+== Licenze BYOL multiple per capacità aggiuntiva (3 agosto 2020)
+
+È ora possibile acquistare più licenze per un sistema Cloud Volumes ONTAP BYOL per allocare più di 368 TIB di capacità. Ad esempio, è possibile acquistare due licenze per allocare fino a 736 TIB di capacità a Cloud Volumes ONTAP. Oppure puoi acquistare quattro licenze per ottenere fino a 1.4 PIB.
+
+Il numero di licenze che è possibile acquistare per un sistema a nodo singolo o una coppia ha è illimitato.
+
+Tenere presente che i limiti dei dischi possono impedire di raggiungere il limite di capacità utilizzando solo i dischi. È possibile superare il limite di dischi di https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html["tiering dei dati inattivi sullo storage a oggetti"^]. Per informazioni sui limiti dei dischi, fare riferimento ai limiti di storage riportati nelle presenti note di rilascio.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-node-licenses.html["Scopri come aggiungere ulteriori licenze di sistema a Cloud Volumes ONTAP"^].
+
+
+
+== 9.7 P5 in AWS (27 luglio 2020)
+
+Cloud Volumes ONTAP 9.7 P5 è ora disponibile in AWS. Questa release di patch include correzioni di bug e supporto per i nuovi tipi di istanze EC2.
+
+https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.7P5["Visualizza l'elenco dei bug corretti nella patch P5"^] (Accesso al NetApp Support Site richiesto).
+
+
+
+=== Supporto per nuovi tipi di istanze EC2
+
+Cloud Volumes ONTAP supporta ora i seguenti tipi di istanze EC2 con le licenze Premium e BYOL:
+
+* c5n.9xlarge
+* c5n.18xlarge
+
+
+
+
+== 9.7 P5 in Azure (20 luglio 2020)
+
+Cloud Volumes ONTAP 9.7 P5 è ora disponibile in Microsoft Azure. Questa release di patch include correzioni di bug e supporto per nuovi tipi di macchine virtuali.
+
+https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.7P5["Visualizza l'elenco dei bug corretti nella patch P5"^] (Accesso al NetApp Support Site richiesto).
+
+
+
+=== Supporto per nuovi tipi di macchine virtuali con Ultra SSD VNVRAM
+
+Cloud Volumes ONTAP ora supporta i seguenti tipi di macchine virtuali con sistemi a nodo singolo dotati di licenza Premium o BYOL:
+
+* Standard_E32s_v3
+* Standard_E48s_v3
+
+
+Il tipo di macchina virtuale E32s_v3 utilizza un https://docs.microsoft.com/en-us/azure/virtual-machines/windows/disks-enable-ultra-ssd["Ultra SSD"^] Per la VNVRAM, che offre migliori prestazioni di scrittura.
+
+Il supporto per questi tipi di macchine virtuali è attualmente disponibile nelle seguenti regioni: US Gov Virginia, Stati Uniti centro-meridionali e Stati Uniti occidentali.
+
+
+
+== Supporto di più VM storage in AWS (16 luglio 2020)
+
+Cloud Volumes ONTAP 9.7 ora supporta più macchine virtuali storage (SVM) in AWS.
+
+Con i tipi di istanze C5, M5 e R5 sono supportate più macchine virtuali storage quando si porta la propria licenza (BYOL). Sono supportate le seguenti macchine virtuali di storage:
+
+* 12 VM storage con sistemi a nodo singolo
+* 8 VM storage con coppie ha
+
+
+È necessaria una licenza add-on per ogni ulteriore VM di storage _data-serving_ oltre la prima VM di storage configurata con Cloud Volumes ONTAP per impostazione predefinita. Contattare il proprio account team per ottenere una licenza add-on SVM.
+
+Le VM di storage configurate per il disaster recovery (DR) non richiedono una licenza add-on (sono gratuite), ma contano rispetto al limite delle VM di storage.
+
+Ad esempio, se si dispone di 8 VM di storage che servono dati su una coppia ha, il limite è stato raggiunto e non è possibile creare altre VM di storage. Lo stesso vale per un'altra coppia ha con 8 VM di storage configurate per il disaster recovery: Hai raggiunto il limite e non puoi creare altre VM di storage.
+
+La creazione di macchine virtuali storage aggiuntive deve essere eseguita tramite System Manager o CLI.
+
+
+
+== Germania le regioni sovrane di Azure non sono più supportate (26 giugno 2020)
+
+Cloud Volumes ONTAP non è più supportato nelle seguenti aree di Azure:
+
+* Germania Centrale (Sovrano)
+* Germania Nord-est (Sovrano)
+
+
+NetApp continua a supportare Cloud Volumes ONTAP nelle aree pubbliche della Germania:
+
+* Germania Nord (pubblico)
+* Germania centro-occidentale (pubblico)
+
+
+https://cloud.netapp.com/cloud-volumes-global-regions["Consulta l'elenco completo delle aree Azure supportate"^].
+
+
+
+== 9.7 P4 (2 giugno 2020)
+
+La versione della patch 9.7 P4 per Cloud Volumes ONTAP è ora disponibile tramite Cloud Manager 3.8 e versioni successive. Cloud Manager ti chiederà di aggiornare i sistemi esistenti a questa release di patch. https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.7P4["Visualizza l'elenco dei bug corretti nella patch P4"^] (Accesso al NetApp Support Site richiesto).
+
+
+
+== 9.7 P3 (2 maggio 2020)
+
+La patch 9.7 P3 per Cloud Volumes ONTAP è ora disponibile tramite Cloud Manager 3.8 e versioni successive. Cloud Manager ti chiederà di aggiornare i sistemi esistenti a questa release di patch. https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.7P3["Visualizzare l'elenco dei bug corretti nella patch P3"^] (Accesso al NetApp Support Site richiesto).
+
+
+
+== 9.7 P2 (8 aprile 2020)
+
+La versione della patch 9.7 P2 per Cloud Volumes ONTAP è ora disponibile tramite Cloud Manager 3.8 e versioni successive. Cloud Manager ti chiederà di aggiornare i sistemi esistenti a questa release di patch. https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.7P2["Visualizzare l'elenco dei bug corretti nella patch P2"^] (Accesso al NetApp Support Site richiesto).
+
+
+
+== Aumento della capacità del disco in Google Cloud (13 marzo 2020)
+
+È ora possibile collegare fino a 256 TIB di dischi persistenti a Cloud Volumes ONTAP utilizzando le licenze Premium o BYOL in Google Cloud. Da 64 TB.
+
+Come in precedenza, è possibile raggiungere la capacità massima di sistema di 368 TIB per Premium e BYOL combinando dischi persistenti con il tiering dei dati allo storage a oggetti.
+
+Anche il numero massimo di dischi dati per sistema è aumentato a 124 dischi.
+
+* link:reference-configs-gcp.html["Scopri di più sulle configurazioni supportate per Cloud Volumes ONTAP in Google Cloud"]
+* link:reference-limits-gcp.html["Esamina i limiti di storage in Google Cloud"]
+
+
+
+
+== 9.7 P1 (6 marzo 2020)
+
+La versione della patch 9.7 P1 per Cloud Volumes ONTAP è ora disponibile tramite Cloud Manager 3.8 e versioni successive. Cloud Manager ti chiederà di aggiornare i sistemi esistenti a questa release di patch. https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/downloads-tab/download/62632/9.7P1["Visualizzare l'elenco dei bug corretti nella patch P1"^] (Accesso al NetApp Support Site richiesto).
+
+
+
+== Aggiornamenti AWS (16 febbraio 2020)
+
+Abbiamo introdotto il supporto per le nuove istanze EC2 e una modifica nel numero di dischi dati supportati.
+
+
+
+=== Supporto per nuove istanze
+
+Diversi nuovi tipi di istanze EC2 sono ora supportati con Cloud Volumes ONTAP 9.7 quando si utilizza una licenza Premium o BYOL:
+
+* c5.9xlarge
+* c5d.18xlarge ^1^
+* m5d.8xlarge ^1^
+* m5d.12xlarge ^1^
+* m5.16xlarge
+* r5.8xlarge
+* r5.12xlarge ^2^
+
+
+^1^ questi tipi di istanze includono lo storage NVMe locale, utilizzato da Cloud Volumes ONTAP come _Flash cache_. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-flash-cache.html["Scopri di più"^].
+
+^2^ il tipo di istanza r5.12xLarge ha un limite noto di supportabilità. Se un nodo si riavvia inaspettatamente a causa di un panico, il sistema potrebbe non raccogliere i file principali utilizzati per la risoluzione dei problemi e causare il problema. Il cliente accetta i rischi e i termini di supporto limitati e si assume la responsabilità del supporto in caso di questa condizione.
+
+https://aws.amazon.com/ec2/instance-types/["Scopri di più su questi tipi di istanze EC2"^].
+
+link:reference-configs-aws.html["Scopri di più sulle configurazioni 9.7 supportate in AWS"].
+
+
+
+=== Dischi dati supportati
+
+Un disco dati in meno è ora supportato per le istanze c5, m5 e r5. Per i sistemi a nodo singolo, sono supportati 22 dischi dati. Per le coppie ha, sono supportati 19 dischi dati per nodo.
+
+link:reference-limits-aws.html["Scopri di più sui limiti di storage in AWS"].
+
+
+
+== Supporto per DS15_v2 in Azure (12 febbraio 2020)
+
+Cloud Volumes ONTAP è ora supportato con il tipo di macchina virtuale DS15_v2 in Azure, sia su sistemi a nodo singolo che su coppie ha.
+
+https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-memory#dsv2-series-11-15["Scopri di più sulla serie DSv2"^].
+
+link:reference-configs-azure.html["Scopri di più sulle configurazioni 9.7 supportate in Azure"].
+
+
+
+== 9.7 GA (10 febbraio 2020)
+
+La versione di disponibilità generale (GA) di Cloud Volumes ONTAP 9.7 è ora disponibile in AWS e Google Cloud. La release GA include correzioni di bug. Cloud Manager ti chiederà di aggiornare i sistemi esistenti a questa release.
+
+
+
+== 9.7 D1 per Azure (29 gennaio 2020)
+
+Cloud Volumes ONTAP 9.7 D1 è ora disponibile in Microsoft Azure.
+
+Abbiamo scoperto un problema con Cloud Volumes ONTAP 9.7 e versioni precedenti, in cui Cloud Volumes ONTAP potrebbe non avviarsi correttamente in situazioni in cui la macchina virtuale Azure viene riavviata.
+
+Questo problema è stato risolto in 9.7 D1 (e versioni successive). Si consiglia vivamente di eseguire l'aggiornamento alla versione più recente di Cloud Volumes ONTAP il prima possibile.
+
+In caso di domande, contattaci utilizzando la chat in-product o all'indirizzo https://www.netapp.com/us/contact-us/support.aspx[].
+
+
+
+== 9.7 RC1 (16 dicembre 2019)
+
+Cloud Volumes ONTAP 9.7 RC1 è ora disponibile in AWS, Azure e Google Cloud Platform. Oltre alle funzionalità introdotte con https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508["ONTAP 9.7"^], Questa versione di Cloud Volumes ONTAP include quanto segue:
+
+* <<Supporto di Flash cache in Azure>>
+* <<Correzione per gli eventi di distacco della NIC Azure>>
+
+
+
+
+=== Supporto di Flash cache in Azure
+
+Cloud Volumes ONTAP ora supporta il tipo di macchina virtuale standard_L8s_v2 con sistemi BYOL a nodo singolo in Azure. Questo tipo di macchina virtuale include lo storage NVMe locale, utilizzato da Cloud Volumes ONTAP come _Flash cache_.
+
+Flash cache accelera l'accesso ai dati attraverso il caching intelligente in tempo reale dei dati utente recentemente letti e dei metadati NetApp. È efficace per i carichi di lavoro a lettura intensiva, inclusi database, e-mail e file service.
+
+Implementa nuovi sistemi utilizzando questo tipo di macchina virtuale o modifica i sistemi esistenti per utilizzare questo tipo di macchina virtuale e potrai sfruttare automaticamente Flash cache.
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-flash-cache.html["Scopri di più sull'attivazione di Flash cache su Cloud Volumes ONTAP, inclusa una limitazione della compressione dei dati"^].
+
+
+
+=== Correzione per gli eventi di distacco della NIC Azure
+
+Questa versione risolve un problema di riavvio del nodo Cloud Volumes ONTAP da eventi di scollegamento della scheda di rete Azure. Cloud Volumes ONTAP gestirà questi eventi in modo più corretto e non interromperò il servizio. Le coppie ha di Cloud Volumes ONTAP eseguiranno comunque una sequenza di takeover/give back dagli eventi di manutenzione di Azure Freeze, ma non vi sarà alcun riavvio successivo da una connessione NIC che potrebbe verificarsi durante questo periodo di tempo.
+
+
+
+== Note sull'aggiornamento
+
+* Gli aggiornamenti di Cloud Volumes ONTAP devono essere completati da Cloud Manager. Non aggiornare Cloud Volumes ONTAP utilizzando Gestione di sistema o l'interfaccia CLI. In questo modo si può influire sulla stabilità del sistema.
+* È possibile eseguire l'aggiornamento a Cloud Volumes ONTAP 9.7 dalla versione 9.6. Cloud Manager ti chiederà di aggiornare i sistemi Cloud Volumes ONTAP 9.6 esistenti alla release 9.7.
++
+http://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html["Scopri come eseguire l'aggiornamento quando Cloud Manager ti notifica"^].
+
+* L'aggiornamento di un sistema a nodo singolo porta il sistema offline per un massimo di 25 minuti, durante i quali l'i/o viene interrotto.
+* L'aggiornamento di una coppia ha è senza interruzioni e l'i/o è ininterrotto. Durante questo processo di aggiornamento senza interruzioni, ogni nodo viene aggiornato in tandem per continuare a fornire i/o ai client.
+
