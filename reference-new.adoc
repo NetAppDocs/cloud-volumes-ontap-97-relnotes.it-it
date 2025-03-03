@@ -112,7 +112,7 @@ NetApp continua a supportare Cloud Volumes ONTAP nelle aree pubbliche della Germ
 * Germania centro-occidentale (pubblico)
 
 
-https://cloud.netapp.com/cloud-volumes-global-regions["Consulta l'elenco completo delle aree Azure supportate"^].
+https://bluexp.netapp.com/cloud-volumes-global-regions["Consulta l'elenco completo delle aree Azure supportate"^].
 
 
 
